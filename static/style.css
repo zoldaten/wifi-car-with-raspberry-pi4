@@ -1,0 +1,13 @@
+
+body {
+  background-color: whitesmoke;
+}
+
+.btn {
+  color: black;
+  cursor: pointer;
+}
+
+.active {
+  color: red;
+}

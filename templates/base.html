@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href={{ url_for('static', filename='style.css')}} />
+  </head>
+  <body>
+    <nav>
+      <ul>
+        <li> <a href="#">Home</a></li>
+         <li> <a href="#">About</a></li>
+      </ul>
+    </nav>
+    <div class="camera-frame"> 
+      <h1>The Control center</h1>
+      <img id="bg" class="video-stream" src="{{ url_for('video_stream')}}" >
+    </div>
+    <div>
+      <button class="btn " id="left" onmousedown="left()" onmouseup="left('')">Left</button>
+      <button class="btn " id="forward" onmousedown="forward()" onmouseup="forward('')"  >Up</button>
+      <button class="btn " id="backwards" onmousedown="backwards()" onmouseup="backwards('')" >Down</button>
+      <button class="btn " id="right" onmousedown="right()" onmouseup="right('')" >Right</button>
+      <button class="btn " id="stop" onmousedown="stop()" onmouseup="stop('')" >Stop</button>
+    </div>
+    <p>Houston we have a problem!</p>
+  </body>
+  <script src={{url_for('static', filename='script.js')}}></script>
+</html>
