@@ -8,6 +8,6 @@ body {
   cursor: pointer;
 }
 
-.active {
+.pressed {
   color: red;
 }

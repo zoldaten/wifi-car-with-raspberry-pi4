@@ -1,16 +1,32 @@
-## Start the server in debug mode
-```bash
-python3 flask-ard-car.py
+## If venv (virutal envierement) is not installed.
+```Bash
+sudo apt install python3.10-venv
 ```
+## if just cloned make an virutal env 
+`````Bash
+python3 -m venv ~/wifi-car-with-raspberry-pi4/
 
+`````````
 ## start virtual envierement.
 ```bash
 source flask-env/bin/activate
 ```
+## then install dependencies
+````Bash
+pip install -r requirements.txt
+``````
 To deactivate type 
 
 ```bash
 deactivate
+```
+## Start the server with debug mode set to True
+```bash
+python3 flask-ard-car.py
+```
+## To udapte requirements.txt type this
+```Bash
+pip freeze > requirements.txt
 ```
 ## Conection frontend to backend
 * Using ajax and javascript to send data on every button click or keystroke press.
