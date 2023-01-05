@@ -4,27 +4,29 @@
     <title></title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href={{ url_for('static', filename='style.css')}} />
+    <link rel="stylesheet" href={{ url_for('static', filename='styles.css')}} />
   </head>
   <body>
     <nav>
       <ul>
-        <li> <a href="#">Home</a></li>
+        <li> <a href="#">The Control Center</a></li>
          <li> <a href="#">About</a></li>
       </ul>
     </nav>
-    <div class="camera-frame"> 
-      <h1>The Control center</h1>
-      <img id="bg" class="video-stream" src="{{ url_for('video_stream')}}" >
+    <div class="wrapper">
+      <div class="camera-frame"> 
+        <!-- <img id="bg" class="video-stream" src="{{ url_for('video_stream')}}" > -->
+        <img id="bg" class="video-stream" src={{ url_for('static', filename='mock.webp')}} >
+      </div>
+        <div class="controls">
+          <button class="btn " id="left" >Left</button>
+          <button class="btn " id="forward" >Up</button>
+          <button class="btn " id="backwards" >Down</button>
+          <button class="btn " id="right" >Right</button>
+          <button class="btn " id="stop" >Stop</button>
+        </div>
     </div>
-    <div>
-      <button class="btn " id="left" >Left</button>
-      <button class="btn " id="forward" >Up</button>
-      <button class="btn " id="backwards" >Down</button>
-      <button class="btn " id="right" >Right</button>
-      <button class="btn " id="stop" >Stop</button>
-    </div>
-    <p>Houston we have a problem!</p>
+    <p class="txt-center">Houston we have a problem!</p>
   </body>
   <script src={{url_for('static', filename='script.js')}}></script>
 </html>

@@ -1,0 +1,78 @@
+/* Root  */
+body {
+  background-color: whitesmoke;
+  margin: 0;
+  padding: 0;
+}
+
+nav > ul > li > a {
+text-decoration:none;
+}
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+.wrapper {
+  display: flex;  
+  flex-direction: row-reverse;
+  justify-content: center;
+  gap: 2.5em;
+  padding: 0.75rem;
+}
+.video-stream{
+  width: 50em;
+}
+.camera-frame {
+  text-align: center;
+}
+
+/* Controls */
+.controls {
+  align-self: flex-end;
+  /* width: 300px; */
+  display: grid;
+  gap: 0.3rem;
+  grid-template-columns: 60px 60px 60px;
+  grid-template-rows: 60px 60px 40px;
+}
+
+#forward {
+  grid-row-start: 1;
+  grid-column: 2;
+}
+
+#stop {
+background-color: red;
+ grid-column-start: 1;
+ grid-column-end: 4;
+ grid-row: 3;
+}
+
+#right {
+  grid-column:3;
+  grid-row-start:2;
+  grid-row-end:2;
+}
+
+#left {
+  grid-column:1;
+  grid-row:2;
+}
+#backwards {
+  grid-column-start:2;
+  grid-row:2;
+}
+.txt-center{
+  text-align: center;
+}
+/* controll buttons */
+.btn {
+  color: black;
+  cursor: pointer;
+}
+
+.pressed {
+  color: red;
+}

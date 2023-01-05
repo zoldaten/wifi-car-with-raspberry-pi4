@@ -25,8 +25,8 @@ def retrieve_data():
     else:
         return abort(404)
     return "success"
-@app.route("/video")
-def video_stream():
+@app.route("/video_feed")
+def video_feed():
     pass #logic for live video
     return "smth"
 if __name__ == "__main__":

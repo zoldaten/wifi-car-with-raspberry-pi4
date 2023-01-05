@@ -2,9 +2,9 @@
 ```Bash
 sudo apt install python3.10-venv
 ```
-## if just cloned make an virutal env 
+## if just cloned make an virtual envierament
 `````Bash
-python3 -m venv ~/wifi-car-with-raspberry-pi4/
+python3 -m venv ./flask-env
 
 `````````
 ## start virtual envierement.
@@ -24,7 +24,7 @@ deactivate
 ```bash
 python3 flask-ard-car.py
 ```
-## To udapte requirements.txt type this
+## To update requirements.txt type this
 ```Bash
 pip freeze > requirements.txt
 ```
