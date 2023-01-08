@@ -6,9 +6,10 @@ const LEFT_VALUE = 4;
 const RIGHT_VALUE = 5;
 const SPEED_UP_VALUE = 6;
 const SPEED_DOWN_VALUE = 7;
+const PIC_VALUE = 10;
 // Define a constant for the refresh rate (in milliseconds)
-const REFRESH_RATE = 1000;
-
+const REFRESH_RATE = 100;
+const REFRESH_RATE_PIC = 1000;
 // Define a variable to store the timestamp of the last data sent
 let lastDataSentTimestamp = 0;
 
@@ -22,6 +23,8 @@ const backwardsBtn = document.getElementById("backwards");
 const leftBtn = document.getElementById("left");
 const rightBtn = document.getElementById("right");
 const stopBtn = document.getElementById("stop");
+const picBtn = document.getElementById("pic"); 
+
 /**
  * Sends the specified data to the server if the specified amount of time has passed since the last data was sent.
  * @param {number} value The data to send to the server.
@@ -39,6 +42,13 @@ function sendData(value, refreshRate) {
 
     // Send the data to the server
     const xhttp = new XMLHttpRequest();
+    if (value === PIC_VALUE) {
+      xhttp.onreadystatechange = function() {
+        if (xhttp.readyState == XMLHttpRequest.DONE) {
+          alert(xhttp.responseText);
+        }
+      }
+    }
     xhttp.open("GET", `send?id=${value}`);
     xhttp.send();
   }
@@ -148,4 +158,22 @@ leftBtn.addEventListener("mousedown", () => {
 });
 leftBtn.addEventListener("mouseup", () => {
   handleButton(leftBtn, "released", LEFT_VALUE, REFRESH_RATE);
+});
+rightBtn.addEventListener("mousedown", () => {
+  handleButton(rightBtn, "pressed", RIGHT_VALUE, REFRESH_RATE);
+});
+rightBtn.addEventListener("mouseup", () => {
+  handleButton(rightBtn, "released", RIGHT_VALUE, REFRESH_RATE);
+});
+stopBtn.addEventListener("mousedown", () => {
+  handleButton(stopBtn, "pressed", STOP_VALUE, REFRESH_RATE);
+});
+stopBtn.addEventListener("mouseup", () => {
+  handleButton(stopBtn, "released", STOP_VALUE, REFRESH_RATE);
+});
+picBtn.addEventListener("mousedown", () => {
+  handleButton(picBtn, "pressed", PIC_VALUE, REFRESH_RATE_PIC);
+});
+picBtn.addEventListener("mouseup", () => {
+  handleButton(picBtn, "released", PIC_VALUE, REFRESH_RATE_PIC);
 });

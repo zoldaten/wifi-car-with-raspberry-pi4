@@ -1,42 +1,126 @@
 /*  Root  */
+body, form, fieldset, ol, ul, li, h1, h2, h3, h4, h5, h6, p {
+  margin:0;
+  padding:0;
+}
+img {
+  border:0; /* kills Gecko bug when img's are placed inside links */
+  vertical-align:bottom; /* set vertical align to bottom for IE */
+}
+/* ------------------- Defaults ------------------- */
+html {
+  height:100%; 
+  overflow:auto; /* triggers 100% height in Opera 9.5 */
+  overflow-y:scroll; /* creates a horizontal scrollbar, for a more consistent look & feel */
+  overflow-x: hidden;
+}
 body {
-  background-color: whitesmoke;
-  margin: 0;
-  padding: 0;
+  height:100%; /* helps make height 100% */
+  font:100%/1.5 Arial, Helvetica, sans-serif; /* 100% = 16px, 93.75% = 15px, 87.5% = 14px, 81.25% = 13px, 75% = 12px - font-size in % prevents IE's resize bug */
+  /* background: #F7F6F7; */
+  background: #170B3B;
+  color:#333;
 }
 
+/* global button style */
+.btn {
+  cursor: pointer;
+  background-color: #4F0182;  /* #a020f0; */
+  color: white;
+  border: none;
+}
+
+/* Content  */
+
+.flex-container{
+  margin: auto;
+  min-width: 640px;
+  max-width: 1100px;
+  display: flex;  
+  gap: 2.5em;
+}
+
+
+/* nav bar */
+nav {
+  padding-top: 0.5rem;
+  height: 40px;
+}
 nav > ul > li > a {
 text-decoration:none;
+color: white;
 }
+
+nav > ul > li > :hover{
+  text-decoration: underline;
+}
+
 ul {
+  min-width: 640px;
+  max-width: 1100px;
   list-style-type: none;
-  margin: 0;
-  padding: 0;
+  margin: auto;
   display: flex;
+  align-self: center;
+  justify-content: flex-end;
+  gap: 1rem;
 }
-.wrapper {
-  display: flex;  
+
+ul > :first-child {
+  margin-right: auto;
+}
+
+.video-stream {
   flex-direction: row-reverse;
   justify-content: center;
-  gap: 2.5em;
-  padding: 0.75rem;
 }
+/* video frame  */
+
 .video-stream{
-  width: 50em;
+  width: 100%;
 }
+
 .camera-frame {
+  align-self: flex-end;
+  /* width: 75%; */
+  position: relative;
+}
+
+.txt-center{
+  color:white;
   text-align: center;
+}
+
+/* video frame buttons */
+#pic {
+  right: 0;
+  bottom: 0;
+  margin-bottom: 0.75rem;
+  margin-right: 0.75rem;
+  position: absolute;
+}
+
+.camera-frame > .btn {
+  margin: 0;
+  padding: 0;
+  color: #a020f0;
+  background-color: transparent;
+}
+
+.camera-frame > .btn :hover {
+ color: whitesmoke;
 }
 
 /* Controls */
 .controls {
   align-self: flex-end;
-  /* width: 300px; */
   display: grid;
   gap: 0.3rem;
   grid-template-columns: 60px 60px 60px;
   grid-template-rows: 60px 60px 40px;
 }
+
+/* controll buttons */
 
 #forward {
   grid-row-start: 1;
@@ -44,7 +128,7 @@ ul {
 }
 
 #stop {
-background-color: red;
+ /* background-color: #E20000; */
  grid-column-start: 1;
  grid-column-end: 4;
  grid-row: 3;
@@ -64,15 +148,37 @@ background-color: red;
   grid-column-start:2;
   grid-row:2;
 }
-.txt-center{
-  text-align: center;
-}
-/* controll buttons */
-.btn {
-  color: black;
-  cursor: pointer;
+
+.controls > .btn {
+  color: white;
 }
 
-.pressed {
-  color: red;
+.controls > .pressed {
+  color: #a020f0;
+  background-color: white;
+
+}
+
+/* Galeri  */
+.galeri-container {
+  color: white;
+  padding: 1rem;
+}
+.galeri-column {
+  width: 50%;
+}
+
+.galeri-img {
+  width: 100%;
+  height: auto;
+  /* padding-bottom: 1rem; */
+  padding-top: 1rem;
+}
+/* footer */
+
+.footer {
+  width: 100%;
+  padding: 0.5rem;
+  color: white;
+  text-align: center;
 }
